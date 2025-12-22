@@ -1,0 +1,29 @@
+
+// server.js
+import express from 'express'; // Node.js v24 supports ES Modules by default
+
+const app = express();
+const PORT = 3000;
+
+// Serve a simple HTML page
+app.get('/', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Hello World</title>
+        <style>
+          body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+          h1 { color: #4CAF50; }
+        </style>
+      </head>
+      <body>
+        <h1>Hello World from Node.js v24!</h1>
+      </body>
+    </html>
+  `);
+});
+
+app.listen(PORT, () => {
+  console.log(`✅ Server running at http://localhost:${PORT}`);
+});
